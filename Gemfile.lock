@@ -30,6 +30,7 @@ GIT
 GEM
   remote: http://rubygems.org/
   specs:
+    action_args (2.1.0)
     actioncable (5.0.1)
       actionpack (= 5.0.1)
       nio4r (~> 1.2)
@@ -262,6 +263,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  action_args
   active_admin_datetimepicker
   activeadmin!
   activeadmin-select2

@@ -43,6 +43,7 @@ gem 'activeadmin-select2', require: %w(select2-rails activeadmin-select2)
 gem 'active_admin_datetimepicker'
 gem 'material_icons'
 gem 'materialize-sass'
+gem 'action_args'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
