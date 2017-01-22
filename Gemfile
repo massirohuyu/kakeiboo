@@ -46,6 +46,7 @@ gem 'materialize-sass'
 gem 'action_args'
 gem 'simple_form'
 gem 'materialize-form'
+gem 'ransack', github: 'activerecord-hackery/ransack', branch: 'master'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
