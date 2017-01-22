@@ -6,4 +6,10 @@
     = stylesheet_link_tag    'application', media: 'all'
     = javascript_include_tag 'application'
   %body
-    = yield
+    .row.navbar-fixed
+      %nav
+        .nav-wrapper
+          .col.s12
+            %a.brand-logo{:href => root_path} Kakeiboo
+    .container
+      = yield
