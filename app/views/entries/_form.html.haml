@@ -1,0 +1,17 @@
+= simple_form_for entry do |f|
+  .row
+    - if entry.errors.any?
+      .col.s12
+        %ul
+          - entry.errors.full_messages.each do |message|
+            %li= message
+
+    = f.input :action_date
+    = f.association :item, collection: Item.order(:name), prompt: '未選択'
+    = f.association :detail, collection: Detail.order(:name), prompt: '未選択'
+    = f.input :amount
+    = f.input :description, as: :string
+    = f.association :input_user, collection: User.order(:name), prompt: '未選択'
+    = f.association :ownership, collection: Ownership.order(:name), prompt: '未選択'
+
+  = f.button :submit

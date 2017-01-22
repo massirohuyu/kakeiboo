@@ -1,0 +1,23 @@
+%h1 Entries
+%table
+  %thead
+    %tr
+      %th= Entry.human_attribute_name :action_date
+      %th= Entry.human_attribute_name :item
+      %th= Entry.human_attribute_name :detail
+      %th= Entry.human_attribute_name :amount
+      %th= Entry.human_attribute_name :description
+      %th{:colspan => "3"}
+  %tbody
+    - @entries.each do |entry|
+      %tr
+        %td= entry.action_date
+        %td= entry.item.name
+        %td= entry.detail.name
+        %td= entry.amount
+        %td= entry.description
+        %td= link_to 'Show', entry
+        %td= link_to 'Edit', edit_entry_path(entry)
+        %td= link_to 'Destroy', entry, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New Entry', new_entry_path
