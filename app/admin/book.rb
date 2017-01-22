@@ -1,4 +1,4 @@
-ActiveAdmin.register Ownership do
+ActiveAdmin.register Book do
 
   permit_params :name,
                 { :budgets_attributes => [:id, :item_id, :amount] }
@@ -18,8 +18,8 @@ ActiveAdmin.register Ownership do
 
   controller do
     def new
-      @ownership = Ownership.new
-      @ownership.set_budgets
+      @book = Book.new
+      @book.set_budgets
     end
 
     def edit

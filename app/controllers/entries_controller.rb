@@ -7,13 +7,13 @@ class EntriesController < ApplicationController
           :amount,
           :description,
           :input_user_id,
-          :ownership_id
+          :book_id
 
   # GET /entries
   # GET /entries.json
   def index
     @entries = Entry.all
-    @entries.includes([:item, :detail, :input_user, :ownership])
+    @entries.includes([:item, :detail, :input_user, :book])
   end
 
   # GET /entries/1

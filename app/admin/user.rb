@@ -5,7 +5,7 @@ ActiveAdmin.register User do
                 :name,
                 :password,
                 :password_confirmation,
-                { :ownership_ids => [] }
+                { :book_ids => [] }
 
   form do |f|
     inputs do
@@ -13,7 +13,7 @@ ActiveAdmin.register User do
       f.input :name
       f.input :password
       f.input :password_confirmation
-      f.input :ownerships, as: :select2_multiple
+      f.input :books, as: :select2_multiple
     end
     actions
   end

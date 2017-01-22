@@ -1,6 +1,6 @@
-class Ownership < ApplicationRecord
-  has_many :user_ownerships
-  has_many :user, through: :user_ownerships
+class Book < ApplicationRecord
+  has_many :reading_permissions
+  has_many :user, through: :reading_permissions
   has_many :budgets
   has_many :entries
   accepts_nested_attributes_for :budgets, allow_destroy: true

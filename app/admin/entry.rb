@@ -6,11 +6,11 @@ ActiveAdmin.register Entry do
                 :amount,
                 :description,
                 :input_user_id,
-                :ownership_id
+                :book_id
 
   form do |f|
     inputs do
-      f.input :ownership
+      f.input :book
       f.input :action_date, as: :date_time_picker, datepicker_options: { timepicker: false }
       f.input :item
       f.input :detail

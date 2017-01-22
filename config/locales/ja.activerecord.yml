@@ -1,0 +1,25 @@
+ja:
+  activerecord:
+    models:
+      user: '利用者'
+      entry: '収支一覧'
+      item: '費目'
+      detail: '内訳'
+      book: '会計簿'
+      budget: '予算'
+    attributes:
+      user:
+        uid: 'ログインID'
+        name: '名前'
+        password: 'パスワード'
+        password_confirmation: 'パスワード（確認）'
+      entry:
+        action_date: '日付'
+        item: '費目'
+        detail: '内訳'
+        amount: '金額'
+        description: 'コメント'
+        input_user: '入力者'
+        book: '会計簿'
+        create_at: '作成日'
+        update_at: '更新日'

@@ -1,7 +1,7 @@
 class User < ApplicationRecord
-  has_many :user_ownerships
-  has_many :ownerships, through: :user_ownerships
-  accepts_nested_attributes_for :user_ownerships, allow_destroy: true
+  has_many :reading_permissions
+  has_many :books, through: :reading_permissions
+  accepts_nested_attributes_for :reading_permissions, allow_destroy: true
 
   authenticates_with_sorcery!
 

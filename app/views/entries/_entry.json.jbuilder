@@ -5,7 +5,7 @@ json.extract! entry,
               :amount,
               :description,
               :input_user_id,
-              :ownership_id,
+              :book_id,
               :created_at,
               :updated_at
 

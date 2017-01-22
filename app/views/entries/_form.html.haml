@@ -12,6 +12,6 @@
     = f.input :amount
     = f.input :description, as: :string
     = f.association :input_user, collection: User.order(:name), prompt: '未選択'
-    = f.association :ownership, collection: Ownership.order(:name), prompt: '未選択'
+    = f.association :book, collection: Book.order(:name), prompt: '未選択'
 
   = f.button :submit
