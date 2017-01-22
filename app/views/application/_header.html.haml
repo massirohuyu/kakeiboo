@@ -1,0 +1,12 @@
+.nav-wrapper
+  .col.s12
+    %a.brand-logo{:href => root_path} Kakeiboo
+    %ul.right
+      - if current_user
+        %li
+          %a.dropdown-button{ data: {activates: "login_menu"}, href: "#!" }
+            = current_user.name + ' さん'
+            = mi.arrow_drop_down.css_class('right')
+    %ul#login_menu.dropdown-content
+      %li
+        = link_to 'ログアウト', :logout, method: :post, data: {confirm: '本当にログアウトしますか？'}

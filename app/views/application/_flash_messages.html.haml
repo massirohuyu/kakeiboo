@@ -1,0 +1,4 @@
+- unless flash.empty?
+  - flash.each do |key, msg|
+    .card-panel.message{:class => key }
+      = msg

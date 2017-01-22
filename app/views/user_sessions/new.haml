@@ -1,17 +1,5 @@
-= form_for @user, :url => user_sessions_path do |f|
-  - if @user.errors.any?
-    #error_explanation
-      %h2
-        = pluralize(@user.errors.count, "error")
-        prohibited this @user from being saved:
-      %ul
-        - @user.errors.full_messages.each do |message|
-          %li= message
-  .field
-    = f.label :uid
-    = f.text_field :uid
-  .field
-    = f.label :password
-    = f.text_field :password
-  .actions
-    = f.submit
+= simple_form_for @user, url: user_sessions_path do |f|
+  .row
+    = f.input :uid
+    = f.input :password
+  = f.button :submit
