@@ -5,4 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-User.create({ uid: 'admin', name: '管理者', password: 'password', password_confirmation: 'password' })
+user = User.create({ id: 1, uid: 'admin', name: '管理者', password: 'password', password_confirmation: 'password' })
+item = Item.create({ id: 1, name: 'テスト費目', kind: 0 })
+detail = Detail.create({ id: 1, item_id: 1, name: 'テスト内訳' })
+book = Book.create({ id: 1, name: 'テスト会計簿' })
+
+user.books << book
+user.save!
