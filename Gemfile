@@ -47,6 +47,8 @@ gem 'action_args'
 gem 'simple_form'
 gem 'materialize-form'
 gem 'ransack', github: 'activerecord-hackery/ransack', branch: 'master'
+gem 'riot_js-rails', :git => 'git://github.com/osamutake/riot_js-rails',
+                     :branch => 'support_sprockets_2_3_and_4'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

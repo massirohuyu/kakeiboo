@@ -14,4 +14,10 @@
 //= require jquery_ujs
 //= require materialize
 //= require materialize-form
+//= require riot
+//= require riot_rails
 //= require_tree .
+
+$(function(){
+  riot.mount('example_haml');
+});

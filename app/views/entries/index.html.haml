@@ -21,3 +21,5 @@
         %td= link_to 'Destroy', entry, method: :delete, data: { confirm: 'Are you sure?' }
 %br/
 = link_to 'New Entry', new_entry_path
+
+= riot_component(:example_haml, { entries: @entries.to_(include: :item) })

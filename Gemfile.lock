@@ -1,4 +1,13 @@
 GIT
+  remote: git://github.com/osamutake/riot_js-rails
+  revision: 9555dc465f371b0d4d4ce1f2d354223261e6a8e6
+  branch: support_sprockets_2_3_and_4
+  specs:
+    riot_js-rails (0.6.1)
+      execjs (~> 2)
+      rails (>= 3.0, < 6.0)
+
+GIT
   remote: https://github.com/activeadmin/activeadmin.git
   revision: 169bad98f2746be19b71357bb16a81065640a337
   specs:
@@ -292,6 +301,7 @@ DEPENDENCIES
   puma (~> 3.0)
   rails (~> 5.0.1)
   ransack!
+  riot_js-rails!
   sass-rails (~> 5.0)
   simple_form
   sorcery
