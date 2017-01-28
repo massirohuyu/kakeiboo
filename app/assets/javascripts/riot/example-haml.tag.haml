@@ -10,16 +10,31 @@
         %th= Entry.human_attribute_name :amount
         %th= Entry.human_attribute_name :description
         %th{:colspan => "3"}
+    %body
+      %tr{ each: "{entries.models}" }
+        %td { action_date }
+        %td { item.name }
+        %td { detail.name }
+        %td { amount }
+        %td { description }
+        %td
+          %a{ href: "#/", onclick: "{destroy}" } Destroy
 
   :scss
     example-haml {
     }
 
   :javascript
-    var self = this
-    this.entries = opts.entries
-    console.log(this.entries)
 
-    this.change_header = function(){
-      self.header = 'New header'
+    var self = this;
+    this.mixin('app');
+
+    this.entries = this.app.collections.entries;
+
+    this.entries.on('updated', function() {
+      self.update();
+    });
+
+    this.destroy = function(e) {
+      self.entries.trigger('delete', e.item.id);
     }
