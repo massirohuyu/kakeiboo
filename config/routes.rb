@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
   ActiveAdmin.routes(self)
-  resources :entries
   root 'top#index'
+
+  namespace :api do
+    resources :entries, except: [:new, :edit], format: 'json'
+  end
+
+  resources :books, only: [:index, :show]
 
   get  'login'  => 'user_sessions#new', as: 'login'
   post 'logout' => 'user_sessions#destroy', as: 'logout'

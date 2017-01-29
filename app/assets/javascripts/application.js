@@ -53,7 +53,7 @@
 
     collection.on('get', function (callback) {
       var co = this;
-      ajax('.json?' + co.params, 'get', null, function (models) {
+      ajax('?' + co.params, 'get', null, function (models) {
         co.models = models;
         if (typeof callback === 'function') callback(models);
       });
@@ -62,7 +62,7 @@
     collection.on('get_one', function (id, callback) {
       var co = this;
       if (typeof id !== 'number') return;
-      ajax('/' + id + '.json', 'get', null, function (model) {
+      ajax('/' + id, 'get', null, function (model) {
         var index = _.findIndex(co.models, ['id', id]);
         co.models[index] = model;
         if (typeof callback === 'function') callback(model);
@@ -71,17 +71,17 @@
 
     collection.on('post', function (params, callback) {
       if (!params) return;
-      ajax('.json/', 'post', params, callback);
+      ajax('/', 'post', params, callback);
     });
 
     collection.on('patch', function (id, params, callback) {
       if (typeof id !== 'number' || !params) return;
-      ajax('/' + id + '.json', 'put', params, callback);
+      ajax('/' + id, 'put', params, callback);
     });
 
     collection.on('delete', function (id, callback) {
       if (typeof id !== 'number') return;
-      ajax('/' + id + '.json', 'delete', null, callback);
+      ajax('/' + id, 'delete', null, callback);
     });
 
     var ajax = function(path, method, params, callback) {
@@ -114,7 +114,7 @@
 
   app.collections = {
     entries: app._createCollection({
-      remote: '/entries'
+      remote: '/api/entries'
     })
   };
 

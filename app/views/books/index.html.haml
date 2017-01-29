@@ -1,0 +1,7 @@
+.container
+  %h1 Books
+
+  %div.collection
+    - @books.each do |book|
+      = link_to book_path(book), class: 'collection-item' do
+        = book.name

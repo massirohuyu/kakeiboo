@@ -14,5 +14,3 @@ json.book       entry.book, :id, :name
 json.item       entry.item,   :id, :name
 json.detail     entry.detail, :id, :name
 json.input_user entry.input_user.name
-
-json.url entry_url(entry, format: :json)

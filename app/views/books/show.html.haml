@@ -1,0 +1,10 @@
+.row
+  .col.l8
+    .container
+      %h1= @book.name
+      = riot_component(:example_haml, { })
+      \#{link_to '一覧へ', books_path}
+  .col.l4.grey.lighten-3.p-entry-form
+    %h2 会計入力
+    = render 'form', entry: @entry
+

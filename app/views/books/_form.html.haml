@@ -1,0 +1,24 @@
+= simple_form_for [:api, entry] do |f|
+  .row
+    .col.l4
+      %input{ type: 'radio', name: 'entry[kind]', id: 'entry_kind_0', value: 0, checked: true }
+      %label{ :for => 'entry_kind_0' } 支出
+    .col.l4
+      %input{ type: 'radio', name: 'entry[kind]', id: 'entry_kind_1', value: 1 }
+      %label{ :for => 'entry_kind_1' } 収入
+  .row
+    - if entry.errors.any?
+      .col.s12
+        %ul
+          - entry.errors.full_messages.each do |message|
+            %li= message
+
+    = f.input :action_date, wrapper_html: { class: 'col l12'}
+    = f.association :item, collection: Item.order(:name), prompt: '未選択'
+    = f.association :detail, collection: Detail.order(:name), prompt: '未選択'
+    = f.input :amount
+    = f.input :description, as: :string
+    = f.input :input_user_id, as: :hidden
+    = f.input :book_id, as: :hidden
+
+  = f.button :submit

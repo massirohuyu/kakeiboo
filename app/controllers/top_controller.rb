@@ -3,7 +3,8 @@ class TopController < ApplicationController
 
   def index
     if logged_in?
-      redirect_to :entries
+      book = current_user.books.first
+      redirect_to book
     else
       redirect_to :login
     end

@@ -6,10 +6,9 @@
     = stylesheet_link_tag    'application', media: 'all'
     = javascript_include_tag 'application'
   %body
-    .row.navbar-fixed
-      %nav
+    .navbar-fixed
+      %nav.row
         = render 'header'
 
-    .container
-      = render 'flash_messages'
-      = yield
+    = render 'flash_messages'
+    = yield

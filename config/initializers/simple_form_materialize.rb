@@ -6,7 +6,7 @@ SimpleForm.setup do |config|
   config.boolean_style = :inline
   config.item_wrapper_tag = :p
 
-  config.wrappers :materialize_form, tag: 'div', class: 'input-field col m4 s12', error_class: 'has-error' do |b|
+  config.wrappers :materialize_form, tag: 'div', class: 'input-field col l6 s12', error_class: 'has-error' do |b|
     b.use :html5
     b.use :placeholder
     b.optional :maxlength
